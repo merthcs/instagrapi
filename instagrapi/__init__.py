@@ -91,6 +91,7 @@ class Client(
                  proxy: str = None,
                  delay_range: list = None,
                  logger=DEFAULT_LOGGER,
+                 device_type: str = None,
                  **kwargs):
 
         super().__init__(**kwargs)
@@ -98,6 +99,7 @@ class Client(
         self.settings = settings
         self.logger = logger
         self.delay_range = delay_range
+        self.device_type = device_type
         
         self.set_proxy(proxy)
 

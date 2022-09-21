@@ -152,6 +152,8 @@ class PrivateRequestMixin:
             "X-IG-Nav-Chain": "9MV:self_profile:2,ProfileMediaTabFragment:self_profile:3,9Xf:self_following:4",
             "X-IG-SALT-IDS": str(random.randint(1061162222, 1061262222)),
         }
+        if self.device_type == 'iPhone':
+            headers.update({'X-IG-iPhone-ID': self.android_device_id})
         if self.user_id:
             next_year = time.time() + 31536000  # + 1 year in seconds
             headers.update({
