@@ -153,6 +153,7 @@ class PrivateRequestMixin:
             "X-IG-SALT-IDS": str(random.randint(1061162222, 1061262222)),
         }
         if self.device_type == 'iPhone':
+            headers.pop('X-IG-Android-ID')
             headers.update({'X-IG-iPhone-ID': self.android_device_id})
         if self.user_id:
             next_year = time.time() + 31536000  # + 1 year in seconds
